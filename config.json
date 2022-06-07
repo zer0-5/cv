@@ -29,15 +29,6 @@
   ],
   "experience": [
     {
-      "date": "2019 - 2021",
-      "position": "Member of CAOS",
-      "enterprise": {
-        "name": "CeSIUM",
-        "link": "https://cesium.di.uminho.pt/"
-      },
-      "description": "A group of open source software development."
-    },
-    {
       "date": "2020 - Now",
       "position": "Mentor",
       "enterprise": {
@@ -51,6 +42,15 @@
       "position": "Moderator of the MiEI Discord server",
       "enterprise": { "name": "Discord", "link": "https://discord.com/" },
       "description": "A community of over 1500 members that aims to help students with the course and programming related topics."
+    },
+    {
+      "date": "2019 - 2021",
+      "position": "Member of CAOS",
+      "enterprise": {
+        "name": "CeSIUM",
+        "link": "https://cesium.di.uminho.pt/"
+      },
+      "description": "A group of open source software development."
     }
   ],
   "projects": [
