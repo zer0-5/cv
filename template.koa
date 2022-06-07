@@ -1,0 +1,134 @@
+"% Project: TeX CV Template
+% LaTeX Template Author: Mendess
+% Content and koal@ Template Authors: koal@ team
+
+\\documentclass{article}
+
+\\usepackage{titlesec}
+\\usepackage{titling}
+\\usepackage[margin=0.5in]{geometry}
+\\usepackage[hidelinks]{hyperref}
+\\hypersetup{
+    colorlinks=true,
+    urlcolor=linkcolor,
+    pdfborderstyle={/S/U/W 1}
+}
+\\usepackage[absolute]{textpos} % showboxes
+\\usepackage{graphicx}
+\\usepackage{mathptmx}
+\\usepackage{multicol}
+\\usepackage[T1]{fontenc}
+\\usepackage{fontawesome}
+\\usepackage[framemethod=tikz]{mdframed}
+
+\\titleformat{\\section}
+{\\huge}
+{}
+{.25em}
+{\\bfseries}
+
+%% Space around title
+\\titlespacing*{\\section}{0pt}{0.3\\baselineskip}{0.2\\baselineskip}
+
+\\definecolor{headercolor}{rgb}{0.122, 0.435, 0.698}
+\\definecolor{linkcolor}{rgb}{0.192, 0.349, 0.408}
+
+\\newmdenv[
+]{headerbox}
+
+\\newcommand{\\ul}[1]{\\underline{#1}}
+
+\\renewcommand{\\maketitle}
+{
+    % \\begin{headerbox}
+    \\begin{center}
+        {\\huge\\bfseries\\theauthor}
+
+        \\vspace{.25em}
+
+        \\Large{"@position"}
+
+
+        \\vspace{.25em}
+        \\large{\\thetitle}
+
+        \\vspace{.25em}"
+if @location {
+    "\\faMapMarker: " @location " |"
+}
+if @email {
+    "\\href{mailto:"@email"}{\\faEnvelope: "@email"}"
+}
+if @git {
+    " | \\href{"@git"}{\\faGithub: "@git"}"
+}
+if @linkedin{
+    " | \\href{"@linkedin.url"}{\\faLinkedinSquare: "@linkedin.nick"}"
+}
+"
+ \\end{center}
+
+}
+
+\\setlength{\\parindent}{0pt}
+
+\\pagenumbering{gobble}
+
+\\begin{document}
+\\title{Curriculum Vitae}
+\\author{"@name"}
+
+\\maketitle
+
+\\hrule
+"
+if @skills{
+    "\\section{Skills}
+\\begin{multicols}{2}"
+    for #sk : @skills{
+        "\\textbf{"#sk.type"}: "for #item : #sk.items/head{#item ", "}#sk.items/last".
+        "
+    }
+    "\\end{multicols}"
+}
+if @experience{
+    "\\section{Experience}
+
+    \\begin{tabular}{p{0.11\\linewidth}p{0.73\\linewidth}l}"
+    for #item : @experience{
+        #item.date"
+        &
+        \\textbf{"#item.position"}
+        &
+        "if #item.enterprise.link{"\\href{"#item.enterprise.link"}{"#item.enterprise.name"}"} else{#item.enterprise.name}"\\\\ &
+        " if #item.description{#item.description"&\\\\ "}
+    }
+    "\\end{tabular}"
+}
+if @projects{
+    "\\section{Highlighted Projects}
+
+    \\begin{tabular}{p{0.11\\linewidth}p{0.73\\linewidth}l}"
+    for #item : @projects{
+        "\\textbf{"#item.lang"}
+        &
+        "if #item.link{"\\href{"#item.link"}{"#item.name"}"} else{"\\textbf{"#item.name"}"}"
+        &
+        "if #item.grade{"Grade: "#item.grade"/20"}"\\\\ &
+        " if #item.description{#item.description"&\\\\ "}
+    }
+    "\\end{tabular}"
+}
+if @education{
+    "\\section{Education}
+    \\begin{tabular}{p{0.11\\linewidth}p{0.55\\linewidth}p{0.26\\linewidth}}"
+    for #item : @education{
+        if #item.date{ #item.date "& "}
+        if #item.name{"\\textbf{"#item.name"}& "
+        if #item.institution{"\\textbf{"#item.institution"}"}"\\\\& "}
+        "& "
+        if #item.average{"Average: "#item.average"\\\\ "}
+    }
+    "\\end{tabular}"
+}
+"\\end{document}"

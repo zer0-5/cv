@@ -1,0 +1,105 @@
+{
+  "name": "Guilherme Fernandes",
+  "position": "Software Engineering Student",
+  "location": "Braga",
+  "email": "guilherme2001fernandes@hotmail.com",
+  "git": "https://github.com/zer0-5",
+  "skills": [
+    {
+      "type": "Programming",
+      "items": [
+        "Rust",
+        "Haskell",
+        "C",
+        "C++",
+        "Python",
+        "Java",
+        "Bash",
+        "Javascript",
+        "Elixir"
+      ]
+    },
+    {
+      "type": "Spoken",
+      "items": ["Portuguese Native", "English C2", "Spanish"]
+    },
+    { "type": "Markup", "items": ["LaTeX", "Markdown", "HTML"] },
+    { "type": "Databases", "items": ["SQL", "PostgeSQL", "MongoDB"] },
+    { "type": "Tools", "items": ["Git", "Unix", "Docker"] }
+  ],
+  "experience": [
+    {
+      "date": "2019 - 2021",
+      "position": "Member of CAOS",
+      "enterprise": {
+        "name": "CeSIUM",
+        "link": "https://cesium.di.uminho.pt/"
+      },
+      "description": "A group of open source software development."
+    },
+    {
+      "date": "2020 - Now",
+      "position": "Mentor",
+      "enterprise": {
+        "name": "CoderDojo",
+        "link": "https://zen.coderdojo.com/"
+      },
+      "description": "Non-profit that aims to teach young people how to code."
+    },
+    {
+      "date": "2020 - Now",
+      "position": "Moderator of the MiEI Discord server",
+      "enterprise": { "name": "Discord", "link": "https://discord.com/" },
+      "description": "A community of over 1500 members that aims to help students with the course and programming related topics."
+    }
+  ],
+  "projects": [
+    {
+      "name": "solaris",
+      "link": "https://github.com/zer0-5/solaris/",
+      "lang": "C++",
+      "description": "A 3D engine and model generator written on top of OpenGL."
+    },
+    {
+      "name": "Koala",
+      "link": "https://github.com/beasrodrigues24/koala",
+      "lang": "Python",
+      "description": "Template Language inspired by Pandoc.",
+      "grade": 20
+    },
+    {
+      "name": "yaPP",
+      "link": "https://github.com/beasrodrigues24/yaPP",
+      "lang": "Python",
+      "description": "PreProcessor for HTML and LaTeX.",
+      "grade": 20
+    },
+    {
+      "name": "Smart Link",
+      "link": "https://github.com/MFJess/POO-21-22",
+      "lang": "Java",
+      "description": "Application to manage houses with smart devices",
+      "grade": 19
+    },
+    {
+      "name": "watchlist",
+      "link": "https://github.com/zer0-5/watchlist",
+      "lang": "Rust",
+      "description": "Backend for a movies tracking application."
+    },
+    {
+      "name": "gUMloso",
+      "lang": "Rust",
+      "description": "Backend for a restaurant recommendations application, with user accounts and maps integration.",
+      "grade": 17
+    }
+  ],
+  "education": [
+    {
+      "date": "2019 - Now",
+      "name": "Bachelors on Software Engineering",
+      "institution": "University of Minho",
+      "average": 16
+    }
+  ]
+}
